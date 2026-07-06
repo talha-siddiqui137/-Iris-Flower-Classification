@@ -8,7 +8,7 @@
 
 
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
 from sklearn.model_selection import train_test_split
 import pandas as pd
 
@@ -27,3 +27,15 @@ prediction = model.predict(X_test)
 accuracy = accuracy_score(y_test, prediction)
 
 print(f"Accuracy is : {accuracy * 100:.2f}%")
+
+
+
+## extra work 
+
+cm = confusion_matrix(y_test, prediction)
+print(cm)
+
+
+report = classification_report(y_test, prediction)
+print("\nClassification Report : ")
+print(report)
